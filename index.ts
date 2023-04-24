@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, UserCredential } from 'firebase/auth';
-import { getFirestore, getDoc, getDocs, DocumentReference, QueryDocumentSnapshot }  from 'firebase/firestore/lite';
+import { getFirestore, getDoc, getDocs, DocumentReference }  from 'firebase/firestore/lite';
 import { DocumentData, QuerySnapshot, DocumentSnapshot }  from 'firebase/firestore/lite';
 import { addDoc, collection, collectionGroup, doc, setDoc } from 'firebase/firestore/lite';
 
@@ -70,7 +70,11 @@ async function signUp(login : string, pass : string) : Promise<string> {
 
 async function do_tests() {
   // placeholder to call functions...
-
+  await login("", "")
+  let docs = await fetchDocs("users");
+  docs.forEach(doc => {
+    console.log(doc.data())
+  })
 }
 
 do_tests();

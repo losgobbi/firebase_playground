@@ -6,6 +6,11 @@ the Firebase SaaS rather AWS. This applet allows me to test some Firestore secur
 # What do we have here
 A few samples for signUp, signIn and fetch some documents from the SaaS.
 
+# Setup
+- npm install firebase
+- npm install ts-node
+
 # How can I use this?
 - Fill up credentials;
 - Call the desired functions at the `do_test` placeholder;
+- run: ts-node index.ts
